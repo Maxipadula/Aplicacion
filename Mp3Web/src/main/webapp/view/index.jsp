@@ -33,23 +33,40 @@ function llamadaAjax(metodo,param) {
 <html>
 
 <body>
-<h2>Rockola!</h2>
+
 
 <div id="about" class="container-fluid">
 	
 	<div class="row">
 	
 		<div class="col-sm-6 text-center" >
-		
-		<div class="list-group">
-			<c:forEach items="${cancion}" var="item">
-		  		<a id="cancion" class="list-group-item" onClick="llamadaAjax('GET','${item.nombre}');" role="button">${item.nombre}</a>
-			</c:forEach>
-		</div>
+			<h2>Rockola!</h2>
+			<div class="list-group">
+				<c:forEach items="${cancion}" var="item">
+			  		<a id="cancion" class="list-group-item" onClick="llamadaAjax('GET','${item.nombre}');" role="button">${item.nombre}</a>
+				</c:forEach>
+			</div>
+			
+			<div class="panel-group">
+				<div class="panel panel-primary">
+				  <div class="panel-heading">
+				  	<h4 class="panel-title">
+				  		Reproduccion
+				  	</h4>
+				  </div>
+				  
+			  	<div class="panel-body">
+			  		<audio  id="reproductor" controls> </audio>
+			  	</div>
+				  
+			  </div>
+			  
+			</div>
+			
 		</div>
 
 	</div>
-	<audio  id="reproductor" controls> </audio>
+	
 </div>
 
 
