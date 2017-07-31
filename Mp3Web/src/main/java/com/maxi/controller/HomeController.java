@@ -21,7 +21,9 @@ public class HomeController {
 		
 		ModelMap modelo = new ModelMap();
 		
-		modelo.put("cancion", reproductor.getListaDeTemas());
+		
+		
+		modelo.put("cancion", reproductor.getListaTemas());
 		modelo.put("sonando", reproductor.getTemaSonando());
 		
 		return new ModelAndView("index",modelo);

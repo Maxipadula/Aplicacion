@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;mail&apos; in &apos;com.inchcape.Modelos.Cliente&apos; to &apos;email&apos;&#x0D;&#x0A;- Original project: &apos;turnos&apos;&#x0D;&#x0A;- Original element: &apos;com.inchcape.Modelos.Cliente.mail&apos;&#x0D;&#x0A;- Renamed element: &apos;com.inchcape.Modelos.Cliente.email&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;mail&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src\/main\/java&lt;com.inchcape.Modelos{Cliente.java[Cliente^mail" name="email" references="true" setter="false" stamp="1501509282516" textual="false" version="1.0"/>
+</session>
