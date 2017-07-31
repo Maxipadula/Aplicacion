@@ -1,0 +1,20 @@
+package com.inchcape.Modelos;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.Proxy;
+
+@Entity
+@Proxy(lazy = false)
+public class Login {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	
+	private String usuario;
+	private String clave;
+
+}

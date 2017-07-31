@@ -1,0 +1,33 @@
+package com.inchcape.Controladores;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.inchcape.Modelos.Cliente;
+import com.inchcape.Modelos.Login;
+import com.inchcape.Servicios.IClienteServicio;
+import com.inchcape.Servicios.IVehiculoServicio;
+
+@Controller
+@RequestMapping("Index")
+public class IndexController {
+	
+	@Autowired
+	IVehiculoServicio vehiculoServicio;
+	@Autowired
+	IClienteServicio clienteServicio;
+	
+	@RequestMapping("/")
+	public ModelAndView index(){
+		
+		Login login;
+		
+		ModelAndView m = new ModelAndView("login");
+		m.addObject("login",login);
+		
+		return m;
+	}
+
+}
