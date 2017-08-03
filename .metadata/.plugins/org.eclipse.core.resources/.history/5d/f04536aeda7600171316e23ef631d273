@@ -1,0 +1,7 @@
+package com.inchcape.Servicios;
+
+public interface ILoginServicio {
+	
+	public boolean loguearse(String user, String pass);
+
+}

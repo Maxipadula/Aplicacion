@@ -1,0 +1,29 @@
+package com.inchcape.Controladores;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.inchcape.Modelos.Login;
+import com.inchcape.Servicios.ILoginServicio;
+
+@Controller
+@RequestMapping("/login")
+public class LoginController {
+	
+	@Autowired
+	ILoginServicio loginServicio;
+	
+	
+	@RequestMapping(value="/",method = RequestMethod.POST)
+	@ResponseBody
+	public String login(@RequestParam("login") Login login){
+		
+		return loginServicio.loguearse(login.getUsuario(), login.getClave());
+	};
+
+}

@@ -1,0 +1,27 @@
+package com.inchcape.Servicios;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.inchcape.DAO.ILoginDAO;
+import com.inchcape.Modelos.Login;
+
+public class LoginServicio implements ILoginServicio{
+
+	@Autowired
+	ILoginDAO loginDAO;
+	
+	@Override
+	public boolean loguearse(String user, String pass) {
+		
+		Login login = loginDAO.getLogin(user, pass);
+		
+		if(login == null){
+			return true;
+		}else{
+			return false;
+		}
+		
+		
+	}
+
+}

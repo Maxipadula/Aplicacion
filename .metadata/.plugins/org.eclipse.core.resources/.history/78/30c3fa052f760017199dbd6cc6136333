@@ -1,0 +1,27 @@
+package com.inchcape.DAO;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.inchcape.Modelos.Login;
+
+public class LoginDAO implements ILoginDAO{
+	
+	@Autowired
+	SessionFactory sessionFactory;
+
+	@Override
+	public Login getLogin(String user, String pass) {
+		Session session = sessionFactory.openSession();
+		
+		String query = "SELECT * FROM Login WHERE usuario = '"+ user +"' and clave = '"+ pass+"'";
+		
+		Login login = (Login) session.createQuery(query).getSingleResult();
+		
+		return login;
+	}
+	
+	
+	
+}

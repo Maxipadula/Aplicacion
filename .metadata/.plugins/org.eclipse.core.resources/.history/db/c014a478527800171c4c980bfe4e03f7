@@ -1,0 +1,94 @@
+var audio;
+var path;
+var temas;
+var playlist;
+
+function llamadaAjax(metodo,param) {
+    $.ajax({
+        url: 'getTema?tema='+param,
+        type: metodo,
+        dataType: "text",
+        success: function (data)
+        {
+        	
+        	audio.src = $('#path').attr('value')+"\/"+data+"";
+        	audio.value = data;
+
+        	audio.play();
+
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+        }
+    });
+}
+
+
+function stop(){
+	audio.pause();
+};
+
+function play(){
+	audio.play();
+};
+
+
+$(document).ready(function() {
+
+audio 		= document.getElementById('reproductor');
+path 		= $('#path');
+temas 		= $('#playList li a');
+playlist 	= $.makeArray(temas);
+
+initPlaylist();
+
+function initPlaylist(){
+
+	
+	llamadaAjax("GET",playlist[0].name);
+	
+	
+	audio.addEventListener('ended',function(e){
+		
+		var len = playlist.length;
+		var canciones = [];
+		var temaSonando;
+		var numeroTemaSonando;
+		var temaAReproducir;
+		
+		$.each(playlist, function(i) {
+		    
+			temas[canciones.length] = playlist[i].name;
+		
+		});
+		
+		temaSonando = audio.value;
+		numeroTemaSonando = canciones.indexOf(temaSonando);
+		temaAReproducir;
+
+
+		if(numeroTemaSonando == len-1){
+			temaAReproducir = 0;
+
+		} else {
+			temaAReproducir = numeroTemaSonando +1;
+
+		}
+		
+		llamadaAjax("GET",playlist[temaAReproducir].name);
+	});
+	
+	/*
+	$('#reproductor').change(function(){
+		$('#tituloReproductor').html(audio.value);
+	});
+	
+	*/
+
+
+}
+
+
+
+});
+
+
