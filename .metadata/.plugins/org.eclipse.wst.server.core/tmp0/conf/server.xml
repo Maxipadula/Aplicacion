@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\mpadulao\Documents\GitHub\Aplicacion\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\mpadulao\Documents\GitHub\Aplicacion\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Mp3Web" path="/Mp3Web" reloadable="true" source="org.eclipse.jst.jee.server:Mp3Web"/><Context docBase="C:\Users\mpadulao\Documents\GitHub\Aplicacion\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\turnos" path="/turnos" reloadable="true" source="org.eclipse.jst.jee.server:turnos"/></Host>
+      <Context docBase="C:\Users\jalputer\Documents\GitKraken\GitAplicacion\Aplicacion\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\jalputer\Documents\GitKraken\GitAplicacion\Aplicacion\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Mp3Web" path="/Mp3Web" reloadable="true" source="org.eclipse.jst.jee.server:Mp3Web"/></Host>
     </Engine>
   </Service>
 </Server>
